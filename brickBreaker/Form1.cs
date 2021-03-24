@@ -23,7 +23,7 @@ namespace brickBreaker
         int brickX = 30;
         int brickY = 30;
 
-        int platformX = 240;
+        int platformX = 245;
         int platformY = 450;
         int platformHeight = 20;
         int platformWidth = 100;
@@ -32,11 +32,12 @@ namespace brickBreaker
         int brickHeight = 20;
         int brickWidth = 60;
 
-        int ballX = 395;
+        int ballX = 290;
         int ballY = 0;
         int ballHeight = 20;
         int ballWidth = 20;
-        int ballSpeed = 10;
+        int ballXSpeed = 0;
+        int ballYSpeed = 10;
 
         int powerUp1X =200;
         int powerUp1Y = 0;
@@ -120,14 +121,14 @@ namespace brickBreaker
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.FillRectangle(whiteBrush, platformX, platformY, platformWidth, platformHeight);
-            e.Graphics.FillEllipse(redBrush, ballX, ballY, ballWidth, ballHeight);
             for (int i = 0; i < brickYList.Count(); i++)
             {
                 e.Graphics.FillRectangle(whiteBrush, brickXList[i], brickYList[i], brickWidth, brickHeight);
             }
+            e.Graphics.FillEllipse(redBrush, ballX, ballY, ballWidth, ballHeight);
+            e.Graphics.FillRectangle(whiteBrush, platformX, platformY, platformWidth, platformHeight);
 
-           
+
 
 
 
@@ -135,6 +136,11 @@ namespace brickBreaker
 
         private void GameTimer_Tick(object sender, EventArgs e)
         {
+            //move the ball
+            ballX += ballXSpeed;
+            ballY += ballYSpeed;
+
+            //move and control the platform
             if (leftDown == true && platformX>0)
             {
                 platformX -= platformSpeed;
@@ -143,7 +149,28 @@ namespace brickBreaker
             {
                 platformX += platformSpeed;
             }
-           
+            //check if ball collides with walls
+            if (ballY < 0 )
+            {
+                ballYSpeed *= -1;
+
+            }
+
+            if (ballY>this.Height +ballHeight)
+            {
+                ballY = 0;
+            }
+            if (ballX<0|| ballX > this.Height - ballHeight)
+            {
+                ballXSpeed *= -1;
+            }
+
+            // check for collision with ball and paddle
+
+            Rectangle platform = new Rectangle(platformX, platformY, platformWidth, platformHeight);
+            Rectangle ball = new Rectangle(ballX, ballY, ballWidth, ballHeight);
+
+
 
 
 
