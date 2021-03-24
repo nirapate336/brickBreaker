@@ -33,6 +33,8 @@
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.titleLabel = new System.Windows.Forms.Label();
             this.subTitleLabel = new System.Windows.Forms.Label();
+            this.scoreLabel = new System.Windows.Forms.Label();
+            this.lifeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gameTimer
@@ -63,13 +65,40 @@
             this.subTitleLabel.Size = new System.Drawing.Size(0, 28);
             this.subTitleLabel.TabIndex = 1;
             // 
+            // scoreLabel
+            // 
+            this.scoreLabel.AutoSize = true;
+            this.scoreLabel.BackColor = System.Drawing.Color.Transparent;
+            this.scoreLabel.Font = new System.Drawing.Font("classic 10_65", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreLabel.ForeColor = System.Drawing.Color.Lime;
+            this.scoreLabel.Location = new System.Drawing.Point(395, 499);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(73, 23);
+            this.scoreLabel.TabIndex = 2;
+            this.scoreLabel.Text = "Score:";
+            // 
+            // lifeLabel
+            // 
+            this.lifeLabel.AutoSize = true;
+            this.lifeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.lifeLabel.Font = new System.Drawing.Font("classic 10_65", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lifeLabel.ForeColor = System.Drawing.Color.Lime;
+            this.lifeLabel.Location = new System.Drawing.Point(24, 499);
+            this.lifeLabel.Name = "lifeLabel";
+            this.lifeLabel.Size = new System.Drawing.Size(64, 23);
+            this.lifeLabel.TabIndex = 3;
+            this.lifeLabel.Text = "Lives";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 550);
+            this.Controls.Add(this.lifeLabel);
+            this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.subTitleLabel);
             this.Controls.Add(this.titleLabel);
             this.DoubleBuffered = true;
@@ -89,6 +118,8 @@
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label subTitleLabel;
+        private System.Windows.Forms.Label scoreLabel;
+        private System.Windows.Forms.Label lifeLabel;
     }
 }
 

@@ -24,7 +24,7 @@ namespace brickBreaker
         int brickY = 30;
 
         int platformX = 240;
-        int platformY = 500;
+        int platformY = 450;
         int platformHeight = 20;
         int platformWidth = 100;
         int platformSpeed = 15;
@@ -34,8 +34,8 @@ namespace brickBreaker
 
         int ballX = 395;
         int ballY = 0;
-        int ballHeight = 5;
-        int ballWidth = 5;
+        int ballHeight = 20;
+        int ballWidth = 20;
         int ballSpeed = 10;
 
         int powerUp1X =200;
@@ -45,6 +45,7 @@ namespace brickBreaker
 
         Random randGen = new Random();
         SolidBrush whiteBrush = new SolidBrush(Color.White);
+        SolidBrush redBrush = new SolidBrush(Color.Red);
 
         bool leftDown = false;
         bool rightDown = false;
@@ -120,11 +121,14 @@ namespace brickBreaker
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.FillRectangle(whiteBrush, platformX, platformY, platformWidth, platformHeight);
-
+            e.Graphics.FillEllipse(redBrush, ballX, ballY, ballWidth, ballHeight);
             for (int i = 0; i < brickYList.Count(); i++)
             {
                 e.Graphics.FillRectangle(whiteBrush, brickXList[i], brickYList[i], brickWidth, brickHeight);
             }
+
+           
+
 
 
         }
@@ -138,7 +142,6 @@ namespace brickBreaker
             if (rightDown == true&& platformX +platformWidth<this.Width)
             {
                 platformX += platformSpeed;
-                
             }
            
 
