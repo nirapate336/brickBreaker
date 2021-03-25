@@ -83,7 +83,7 @@
             this.lifeLabel.BackColor = System.Drawing.Color.Transparent;
             this.lifeLabel.Font = new System.Drawing.Font("classic 10_65", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lifeLabel.ForeColor = System.Drawing.Color.Lime;
-            this.lifeLabel.Location = new System.Drawing.Point(24, 499);
+            this.lifeLabel.Location = new System.Drawing.Point(40, 499);
             this.lifeLabel.Name = "lifeLabel";
             this.lifeLabel.Size = new System.Drawing.Size(64, 23);
             this.lifeLabel.TabIndex = 3;
