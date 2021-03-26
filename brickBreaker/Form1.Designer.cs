@@ -35,6 +35,7 @@
             this.subTitleLabel = new System.Windows.Forms.Label();
             this.scoreLabel = new System.Windows.Forms.Label();
             this.lifeLabel = new System.Windows.Forms.Label();
+            this.levelLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gameTimer
@@ -49,7 +50,7 @@
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel.Font = new System.Drawing.Font("classic 10_65", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.Beige;
-            this.titleLabel.Location = new System.Drawing.Point(121, 107);
+            this.titleLabel.Location = new System.Drawing.Point(148, 63);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(0, 51);
             this.titleLabel.TabIndex = 0;
@@ -60,7 +61,7 @@
             this.subTitleLabel.BackColor = System.Drawing.Color.Transparent;
             this.subTitleLabel.Font = new System.Drawing.Font("classic 10_65", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subTitleLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.subTitleLabel.Location = new System.Drawing.Point(88, 174);
+            this.subTitleLabel.Location = new System.Drawing.Point(71, 153);
             this.subTitleLabel.Name = "subTitleLabel";
             this.subTitleLabel.Size = new System.Drawing.Size(0, 28);
             this.subTitleLabel.TabIndex = 1;
@@ -71,11 +72,10 @@
             this.scoreLabel.BackColor = System.Drawing.Color.Transparent;
             this.scoreLabel.Font = new System.Drawing.Font("classic 10_65", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreLabel.ForeColor = System.Drawing.Color.Lime;
-            this.scoreLabel.Location = new System.Drawing.Point(395, 499);
+            this.scoreLabel.Location = new System.Drawing.Point(473, 499);
             this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.Size = new System.Drawing.Size(73, 23);
+            this.scoreLabel.Size = new System.Drawing.Size(0, 23);
             this.scoreLabel.TabIndex = 2;
-            this.scoreLabel.Text = "Score:";
             // 
             // lifeLabel
             // 
@@ -85,9 +85,19 @@
             this.lifeLabel.ForeColor = System.Drawing.Color.Lime;
             this.lifeLabel.Location = new System.Drawing.Point(40, 499);
             this.lifeLabel.Name = "lifeLabel";
-            this.lifeLabel.Size = new System.Drawing.Size(64, 23);
+            this.lifeLabel.Size = new System.Drawing.Size(0, 23);
             this.lifeLabel.TabIndex = 3;
-            this.lifeLabel.Text = "Lives";
+            // 
+            // levelLabel
+            // 
+            this.levelLabel.AutoSize = true;
+            this.levelLabel.BackColor = System.Drawing.Color.Transparent;
+            this.levelLabel.Font = new System.Drawing.Font("classic 10_65", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.levelLabel.ForeColor = System.Drawing.Color.Lime;
+            this.levelLabel.Location = new System.Drawing.Point(216, 499);
+            this.levelLabel.Name = "levelLabel";
+            this.levelLabel.Size = new System.Drawing.Size(0, 23);
+            this.levelLabel.TabIndex = 4;
             // 
             // Form1
             // 
@@ -97,6 +107,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 550);
+            this.Controls.Add(this.levelLabel);
             this.Controls.Add(this.lifeLabel);
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.subTitleLabel);
@@ -120,6 +131,7 @@
         private System.Windows.Forms.Label subTitleLabel;
         private System.Windows.Forms.Label scoreLabel;
         private System.Windows.Forms.Label lifeLabel;
+        private System.Windows.Forms.Label levelLabel;
     }
 }
 
