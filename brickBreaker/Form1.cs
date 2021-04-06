@@ -285,7 +285,7 @@ namespace brickBreaker
             {
                 for (int i = 0; i < brickYList.Count(); i++)
                 {
-                    //  e.Graphics.FillRectangle(whiteBrush, brickXList[i], brickYList[i], brickWidth, brickHeight);
+                    
                     e.Graphics.DrawImage(brickImage, brickXList[i], brickYList[i], brickWidth, brickHeight);
                 }
 
@@ -472,7 +472,6 @@ namespace brickBreaker
                 }
 
                 //will get rid of yellow and green powerups after the ball hits paddle twice
-
                 if (redCounter == 2)
                 {
                     platformWidth = 60;
@@ -873,12 +872,12 @@ namespace brickBreaker
                 gameState = "lose";
                 scoreList.Add(score);
             }
-            //check if player won level one and should start level two and give them a bonus point
+            //check if player beat level one and should start level two and give them a bonus point
 
             if (score == 16)
             {
                 lives = 3;
-                //gameTimer.Enabled = false;
+                
                 gameState = "level two";
                 brickX = 100;
                 brickY = 50;
