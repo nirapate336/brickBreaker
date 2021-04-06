@@ -13,7 +13,7 @@ using System.Media;
 
 namespace brickBreaker
 {
-    // NiravPatel Final Project Brick Breaker April 7 2021
+    // NiravPatel Final Project - Brick Breaker - April 7 2021
     public partial class Form1 : Form
     {
         //global lists
@@ -158,7 +158,6 @@ namespace brickBreaker
                 brickXList.Add(brickX);
                 brickX = brickX + 160;
             }
-
             gameTimer.Enabled = true;
             titleLabel.Text = "";
             subTitleLabel.Text = "";
@@ -198,7 +197,7 @@ namespace brickBreaker
                     break;
 
                 case Keys.Enter:
-                    if (gameState == "waiting" || gameState == "win" || gameState == "lose")
+                    if ( gameState == "win" || gameState == "lose")
                     {
                         titleLabel.Text = "";
                         gameState = "scoreboard";
@@ -235,10 +234,9 @@ namespace brickBreaker
             if (gameState == "waiting")
             {
                 titleLabel.Text = "BRICK BREAKER";
-                subTitleLabel.Text = "Press SPACE BAR to Start, ESCAPE to Exit \n or M for Power up Instructions";
+                subTitleLabel.Text = "Press SPACE BAR to Start, ESCAPE to Exit \n or M for Instructions";
                 levelLabel.Text = "";
             }
-
             else if (gameState == "lose")
             {
                 titleLabel.Text = "BRICK BREAKER";
@@ -248,7 +246,6 @@ namespace brickBreaker
                 scoreLabel.Text = "";
                 lifeLabel.Text = "";
             }
-
             else if (gameState == "win")
             {
                 titleLabel.Text = "BRICK BREAKER";
@@ -258,7 +255,6 @@ namespace brickBreaker
                 scoreLabel.Text = "";
                 lifeLabel.Text = "";
             }
-
             else if (gameState == "instructions")
             {
                 titleLabel.Text = "Power Up Guide";
@@ -268,7 +264,6 @@ namespace brickBreaker
                 scoreLabel.Text = "";
                 lifeLabel.Text = "";
             }
-
             else if (gameState == "scoreboard")
             {
                 titleLabel.Text = "Previous Scores";
@@ -303,7 +298,7 @@ namespace brickBreaker
                 e.Graphics.DrawImage(Properties.Resources.yellow4, yellowPowerUpX, yellowPowerUpY, ballHeight, ballWidth);
                 e.Graphics.DrawImage(Properties.Resources.green2, greenPowerUpX, greenPowerUpY, ballHeight, ballWidth);
 
-                //fill in the right level for the level label
+                //show the right level for the level label
                 if (gameState == "running")
                 {
                     levelLabel.Text = "First Level";
@@ -318,7 +313,7 @@ namespace brickBreaker
                 subTitleLabel.Text = "";
             }
 
-            //to change the colour of the platform when the powerups are yellow or green
+            //draw platform and change platform with powerups
             if (powerUpColour == "none" && gameState == "running")
             {
                 platformWidth = 100;
@@ -386,6 +381,7 @@ namespace brickBreaker
                 ballX -= 1;
                 ballXSpeed *= -1;
             }
+
             //check ball two if it collides with walls
             if (powerUp1Y < 0 && powerUp1Y > -20)
             {
@@ -526,7 +522,6 @@ namespace brickBreaker
                             ballXSpeed = randGen.Next(3, 6);
                             break;
                         }
-
                         break;
                     }
 
@@ -619,7 +614,6 @@ namespace brickBreaker
                         ball2XSpeed = randGen.Next(3, 6);
                         break;
                     }
-
                 }
 
                 if (ball2BottomRec.IntersectsWith(brickRec))
@@ -744,7 +738,6 @@ namespace brickBreaker
                     {
                         ball3YSpeed = randGen.Next(-6, -3);
                     }
-
                     else if (gen == 2)
                     {
                         ball3YSpeed = randGen.Next(3, 6);
@@ -814,14 +807,13 @@ namespace brickBreaker
                 powerUpColour = "green";
             }
 
-            // when to drop powerups 
+            // check when to when to drop powerups 
             counter++;
             if (counter == 50)
             {
                 purplePowerUpX = randGen.Next(100, 550);
                 purplePowerUpYSpeed = 5;
             }
-
             else if (counter == 250)
             {
                 yellowPowerUpX = randGen.Next(100, 550);
@@ -848,7 +840,6 @@ namespace brickBreaker
                 gameState = "lose";
                 scoreList.Add(score);
             }
-
 
             //check if player won level one and should start level two and give them a bonus point
             if (score == 16)
@@ -897,6 +888,11 @@ namespace brickBreaker
                 scoreList.Add(score);
             }
             Refresh();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
