@@ -120,10 +120,40 @@
     <None Include="Resources\green2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\yellow2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pink2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pink3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pink4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pinkapple.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\yellow.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\yellow2.png" />
+    <None Include="Resources\purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallpurple.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

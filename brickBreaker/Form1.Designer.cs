@@ -48,8 +48,8 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.titleLabel.Font = new System.Drawing.Font("classic 10_65", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.ForeColor = System.Drawing.Color.SandyBrown;
+            this.titleLabel.Font = new System.Drawing.Font("classic 10_65", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.PeachPuff;
             this.titleLabel.Location = new System.Drawing.Point(148, 63);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(0, 51);
@@ -60,8 +60,8 @@
             this.subTitleLabel.AutoSize = true;
             this.subTitleLabel.BackColor = System.Drawing.Color.Transparent;
             this.subTitleLabel.Font = new System.Drawing.Font("classic 10_65", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subTitleLabel.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.subTitleLabel.Location = new System.Drawing.Point(71, 153);
+            this.subTitleLabel.ForeColor = System.Drawing.Color.Navy;
+            this.subTitleLabel.Location = new System.Drawing.Point(39, 152);
             this.subTitleLabel.Name = "subTitleLabel";
             this.subTitleLabel.Size = new System.Drawing.Size(0, 28);
             this.subTitleLabel.TabIndex = 1;

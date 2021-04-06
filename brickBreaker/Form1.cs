@@ -13,6 +13,7 @@ using System.Media;
 
 namespace brickBreaker
 {
+    // NiravPatel Final Project Brick Breaker April 7 2021
     public partial class Form1 : Form
     {
         //global lists
@@ -27,7 +28,7 @@ namespace brickBreaker
         int platformX = 260;
         int platformY = 450;
         int platformHeight = 45;
-        int platformWidth = 600;
+        int platformWidth = 100;
         int platformSpeed = 15;
 
         int brickHeight = 20;
@@ -35,19 +36,17 @@ namespace brickBreaker
 
         int ballX = 290;
         int ballY = 0;
-        int ballHeight = 15;
-        int ballWidth = 15;
+        int ballHeight = 25;
+        int ballWidth = 25;
         int ballXSpeed = 0;
         int ballYSpeed = 3;
 
         int purplePowerUpX;
         int purplePowerUpY = -50;
         int purplePowerUpYSpeed = 0;
-
         int yellowPowerUpX;
         int yellowPowerUpY = -50;
         int yellowPowerUpYSpeed = 0;
-
         int greenPowerUpX;
         int greenPowerUpY = -50;
         int greenPowerUpYSpeed = 0;
@@ -63,17 +62,9 @@ namespace brickBreaker
         int ball3YSpeed = 0;
         string powerUpColour = "none";
 
-        Random randGen = new Random();
-        SolidBrush whiteBrush = new SolidBrush(Color.White);
-        SolidBrush redBrush = new SolidBrush(Color.Red);
-        SolidBrush purpleBrush = new SolidBrush(Color.MediumPurple);
-        SolidBrush pinkBrush = new SolidBrush(Color.LightPink);
-        SolidBrush yellowBrush = new SolidBrush(Color.Goldenrod);
-        SolidBrush greenBrush = new SolidBrush(Color.Green);
-
         bool leftDown = false;
         bool rightDown = false;
-
+        Random randGen = new Random();
         int lives = 3;
         int score = 0;
         int counter = 0;
@@ -87,6 +78,7 @@ namespace brickBreaker
         SoundPlayer loserPlayer = new SoundPlayer(Properties.Resources.loser);
         Image brickImage = Properties.Resources.brick3;
         Image platformImage = Properties.Resources.platform;
+
         public Form1()
         {
             InitializeComponent();
@@ -114,7 +106,6 @@ namespace brickBreaker
             yellowPowerUpX = 0;
             yellowPowerUpY = -50;
             yellowPowerUpYSpeed = 0;
-
             greenPowerUpX = 0;
             greenPowerUpY = -50;
             greenPowerUpYSpeed = 0;
@@ -123,15 +114,16 @@ namespace brickBreaker
             powerUp1Y = -50;
             ball2XSpeed = 0;
             ball2YSpeed = 0;
-
             powerUp2X = 320;
             powerUp2Y = -50;
             ball3XSpeed = 0;
             ball3YSpeed = 0;
             powerUpColour = "none";
 
-            platformWidth = 60;
+            platformHeight = 45;
+            platformWidth = 100;
             platformSpeed = 15;
+            ballX = 290;
 
             for (int i = 1; i < 5; i++)
             {
@@ -166,11 +158,10 @@ namespace brickBreaker
                 brickXList.Add(brickX);
                 brickX = brickX + 160;
             }
-            gameTimer.Enabled = true;
 
+            gameTimer.Enabled = true;
             titleLabel.Text = "";
             subTitleLabel.Text = "";
-
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -200,7 +191,7 @@ namespace brickBreaker
                     break;
 
                 case Keys.Escape:
-                    if (gameState == "waiting" || gameState == "win" || gameState == "scorebord" || gameState == "lose"||gameState == "instructions")
+                    if (gameState == "waiting" || gameState == "win" || gameState == "scorebord" || gameState == "lose" || gameState == "instructions")
                     {
                         Application.Exit();
                     }
@@ -243,15 +234,15 @@ namespace brickBreaker
             //paint the screens
             if (gameState == "waiting")
             {
-                titleLabel.Text = "BALL CATCH";
-                subTitleLabel.Text = "Press Space Bar to Start, Escape to Exit \n or M for power up instructions";
+                titleLabel.Text = "BRICK BREAKER";
+                subTitleLabel.Text = "Press SPACE BAR to Start, ESCAPE to Exit \n or M for Power up Instructions";
                 levelLabel.Text = "";
             }
 
             else if (gameState == "lose")
             {
-                titleLabel.Text = "BALL CATCH";
-                subTitleLabel.Text = "Press Space Bar to Start, Escape to Exit, or \n Enter to view your last 5 scores";
+                titleLabel.Text = "BRICK BREAKER";
+                subTitleLabel.Text = "Press SPACE BAR to Start, ESC to Exit, or \n ENTER to view your last 5 scores";
                 subTitleLabel.Text += "\n        Better luck next time!";
                 levelLabel.Text = "";
                 scoreLabel.Text = "";
@@ -260,8 +251,8 @@ namespace brickBreaker
 
             else if (gameState == "win")
             {
-                titleLabel.Text = "BALL CATCH";
-                subTitleLabel.Text = "Press Space Bar to Start , Escape to Exit, or \n Enter to view your last 5 scores";
+                titleLabel.Text = "BRICK BREAKER";
+                subTitleLabel.Text = "Press SPACE BAR to Start , ESC to Exit, or \n ENTER to view your last 5 scores";
                 subTitleLabel.Text += "\n Congrats! ";
                 levelLabel.Text = "";
                 scoreLabel.Text = "";
@@ -271,7 +262,7 @@ namespace brickBreaker
             else if (gameState == "instructions")
             {
                 titleLabel.Text = "Power Up Guide";
-                subTitleLabel.Text = " Purple power up = extra balls \n Yellow power up = size increase \n Green power up = speed increase\n\n Press Space to start game or Esc to exit";
+                subTitleLabel.Text = " YOU ONLY LOSE A LIFE IF THE RED APPLE\n FALLS TO THE GROUND \n\nPurple flower = Extra balls \n Yellow tray = Size increase \n Green leaf = Speed increase\n\n Press SPACE to start game or ESC to exit";
 
                 levelLabel.Text = "";
                 scoreLabel.Text = "";
@@ -281,7 +272,7 @@ namespace brickBreaker
             else if (gameState == "scoreboard")
             {
                 titleLabel.Text = "Previous Scores";
-                subTitleLabel.Text = "Press space to play again, Esc to exit or \n Backspace to delete all previous scores\n and play again";
+                subTitleLabel.Text = "Press SPACE BAR to play again, ESC to exit or \n BACKSPACE to delete all previous scores\n and play again";
                 scoreLabel.Text = "";
                 lifeLabel.Text = "";
 
@@ -305,12 +296,12 @@ namespace brickBreaker
                     e.Graphics.DrawImage(brickImage, brickXList[i], brickYList[i], brickWidth, brickHeight);
                 }
 
-                e.Graphics.FillEllipse(redBrush, ballX, ballY, ballWidth, ballHeight);
-                e.Graphics.FillEllipse(purpleBrush, purplePowerUpX, purplePowerUpY, ballHeight, ballWidth);
-                e.Graphics.FillEllipse(pinkBrush, powerUp1X, powerUp1Y, ballWidth, ballHeight);
-                e.Graphics.FillEllipse(pinkBrush, powerUp2X, powerUp2Y, ballWidth, ballHeight);
-                e.Graphics.FillEllipse(yellowBrush, yellowPowerUpX, yellowPowerUpY, ballHeight, ballWidth);
-                e.Graphics.FillEllipse(greenBrush, greenPowerUpX, greenPowerUpY, ballHeight, ballWidth);
+                e.Graphics.DrawImage(Properties.Resources.apple2, ballX, ballY, ballWidth, ballHeight);
+                e.Graphics.DrawImage(Properties.Resources.smallpurple, purplePowerUpX, purplePowerUpY, ballHeight, ballWidth);
+                e.Graphics.DrawImage(Properties.Resources.pinkapple, powerUp1X, powerUp1Y, ballWidth, ballHeight);
+                e.Graphics.DrawImage(Properties.Resources.pinkapple, powerUp2X, powerUp2Y, ballWidth, ballHeight);
+                e.Graphics.DrawImage(Properties.Resources.yellow4, yellowPowerUpX, yellowPowerUpY, ballHeight, ballWidth);
+                e.Graphics.DrawImage(Properties.Resources.green2, greenPowerUpX, greenPowerUpY, ballHeight, ballWidth);
 
                 //fill in the right level for the level label
                 if (gameState == "running")
@@ -340,7 +331,7 @@ namespace brickBreaker
             }
             if (powerUpColour == "yellow")
             {
-                e.Graphics.DrawImage(Properties.Resources.yellow2, platformX, platformY, platformWidth, platformHeight);
+                e.Graphics.DrawImage(Properties.Resources.yellow4, platformX, platformY, platformWidth, platformHeight);
             }
             if (powerUpColour == "green")
             {
@@ -814,6 +805,7 @@ namespace brickBreaker
             Rectangle greenRec = new Rectangle(greenPowerUpX, greenPowerUpY, ballWidth, ballHeight);
             if (greenRec.IntersectsWith(platformRec))
             {
+                platformWidth = 100;
                 powerUpPlayer.Play();
                 redCounter = 0;
                 greenPowerUpY = 0 - ballHeight;
@@ -848,12 +840,15 @@ namespace brickBreaker
             //check if you lose due to no lives being left
             if (lives == 0)
             {
+                platformWidth = 0;
+                platformHeight = 0;
                 loserPlayer.Play();
                 lossPlayer.Play();
                 gameTimer.Enabled = false;
                 gameState = "lose";
                 scoreList.Add(score);
             }
+
 
             //check if player won level one and should start level two and give them a bonus point
             if (score == 16)
@@ -894,15 +889,14 @@ namespace brickBreaker
             }
             if (score == 32)
             {
+                platformWidth = 0;
+                platformHeight = 0;
                 winPlayer.Play();
                 gameTimer.Enabled = false;
                 gameState = "win";
                 scoreList.Add(score);
-
             }
             Refresh();
         }
-
-
     }
 }
