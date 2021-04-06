@@ -162,7 +162,6 @@ namespace brickBreaker
             titleLabel.Text = "";
             subTitleLabel.Text = "";
         }
-
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -213,7 +212,6 @@ namespace brickBreaker
                     break;
             }
         }
-
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -227,10 +225,10 @@ namespace brickBreaker
                     break;
             }
         }
-
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             //paint the screens
+
             if (gameState == "waiting")
             {
                 titleLabel.Text = "BRICK BREAKER";
@@ -299,10 +297,12 @@ namespace brickBreaker
                 e.Graphics.DrawImage(Properties.Resources.green2, greenPowerUpX, greenPowerUpY, ballHeight, ballWidth);
 
                 //show the right level for the level label
+
                 if (gameState == "running")
                 {
                     levelLabel.Text = "First Level";
                 }
+
                 if (gameState == "level two")
                 {
                     levelLabel.Text = "Last Level";
@@ -314,20 +314,24 @@ namespace brickBreaker
             }
 
             //draw platform and change platform with powerups
+
             if (powerUpColour == "none" && gameState == "running")
             {
                 platformWidth = 100;
                 e.Graphics.DrawImage(platformImage, platformX, platformY, platformWidth, platformHeight);
             }
+
             if (powerUpColour == "none" && gameState == "level two")
             {
                 platformWidth = 100;
                 e.Graphics.DrawImage(platformImage, platformX, platformY, platformWidth, platformHeight);
             }
+
             if (powerUpColour == "yellow")
             {
                 e.Graphics.DrawImage(Properties.Resources.yellow4, platformX, platformY, platformWidth, platformHeight);
             }
+
             if (powerUpColour == "green")
             {
                 e.Graphics.DrawImage(Properties.Resources.green2, platformX, platformY, platformWidth, platformHeight);
@@ -348,20 +352,24 @@ namespace brickBreaker
             greenPowerUpY += greenPowerUpYSpeed;
 
             //move and control the platform
+
             if (leftDown == true && platformX > 0)
             {
                 platformX -= platformSpeed;
             }
+
             if (rightDown == true && platformX + platformWidth < this.Width)
             {
                 platformX += platformSpeed;
             }
             //check if ball collides with walls
+
             if (ballY < 0)
             {
                 ballY += 1;
                 ballYSpeed *= -1;
             }
+
             if (ballY > this.Height + ballHeight)
             {
                 ballY = 0;
@@ -371,11 +379,13 @@ namespace brickBreaker
                 lives--;
                 lossPlayer.Play();
             }
+
             if (ballX < 0)
             {
                 ballX += 1;
                 ballXSpeed *= -1;
             }
+
             if (ballX > this.Width - ballHeight)
             {
                 ballX -= 1;
@@ -383,11 +393,13 @@ namespace brickBreaker
             }
 
             //check ball two if it collides with walls
+
             if (powerUp1Y < 0 && powerUp1Y > -20)
             {
                 powerUp1Y = 1;
                 ball2YSpeed *= -1;
             }
+
             if (powerUp1Y > this.Height + ballHeight)
             {
                 powerUp1Y = 0 - ballHeight * 2;
@@ -395,11 +407,13 @@ namespace brickBreaker
                 ball2YSpeed = 0;
                 ball2XSpeed = 0;
             }
+
             if (powerUp1X < 0)
             {
                 powerUp1X += 1;
                 ball2XSpeed *= -1;
             }
+
             if (powerUp1X > this.Width - ballHeight)
             {
                 powerUp1X -= 1;
@@ -407,11 +421,13 @@ namespace brickBreaker
             }
 
             //check ballthree if it collides with walls
+
             if (powerUp2Y < 0 && powerUp2Y > -20)
             {
                 powerUp2Y = 1;
                 ball3YSpeed *= -1;
             }
+
             if (powerUp2Y > this.Height + ballHeight)
             {
                 powerUp2Y = 0 - ballHeight * 2;
@@ -419,11 +435,13 @@ namespace brickBreaker
                 ball3YSpeed = 0;
                 ball3XSpeed = 0;
             }
+
             if (powerUp2X < 0)
             {
                 powerUp2X += 1;
                 ball3XSpeed *= -1;
             }
+
             if (powerUp2X > this.Width - ballHeight)
             {
                 powerUp2X -= 1;
@@ -437,11 +455,13 @@ namespace brickBreaker
             Rectangle ball3Rec = new Rectangle(powerUp2X, powerUp2Y, ballWidth, ballHeight);
 
             int gen = randGen.Next(1, 3);
+
             if (ballRec.IntersectsWith(platformRec))
             {
                 player.Play();
                 redCounter++;
                 ballYSpeed *= -1;
+
                 if (gen == 1)
                 {
                     ballXSpeed = randGen.Next(-6, -3);
@@ -452,6 +472,7 @@ namespace brickBreaker
                 }
 
                 //will get rid of yellow and green powerups after the ball hits paddle twice
+
                 if (redCounter == 2)
                 {
                     platformWidth = 60;
@@ -467,6 +488,7 @@ namespace brickBreaker
             {
                 player.Play();
                 ball2YSpeed *= -1;
+
                 if (gen == 1)
                 {
                     ball2XSpeed = randGen.Next(-6, -3);
@@ -475,6 +497,7 @@ namespace brickBreaker
                 {
                     ball2XSpeed = randGen.Next(3, 6);
                 }
+
             }
 
             //check if ball 3 interescts with paddle
@@ -482,6 +505,7 @@ namespace brickBreaker
             {
                 player.Play();
                 ball3YSpeed *= -1;
+
                 if (gen == 1)
                 {
                     ball3XSpeed = randGen.Next(-6, -3);
@@ -490,6 +514,7 @@ namespace brickBreaker
                 {
                     ball3XSpeed = randGen.Next(3, 6);
                 }
+
             }
 
             //check for ball and brick collisions and change direction
@@ -552,6 +577,7 @@ namespace brickBreaker
                         brickXList.RemoveAt(i);
                         brickYList.RemoveAt(i);
                         score++;
+
                         if (gen == 1)
                         {
                             ballYSpeed = randGen.Next(-6, -3);
@@ -564,6 +590,7 @@ namespace brickBreaker
                         ballX = ballX + 1;
                         break;
                     }
+
                     if (ballRightRec.IntersectsWith(brickRec))
                     {
                         player.Play();
@@ -571,6 +598,7 @@ namespace brickBreaker
                         brickYList.RemoveAt(i);
                         score++;
                         player.Play();
+
                         if (gen == 1)
                         {
                             ballY = randGen.Next(-6, -3);
@@ -624,6 +652,7 @@ namespace brickBreaker
                     brickYList.RemoveAt(i);
                     score++;
                     player.Play();
+
                     if (gen == 1)
                     {
                         ball2XSpeed = randGen.Next(-6, -3);
@@ -765,6 +794,7 @@ namespace brickBreaker
                     ball3XSpeed *= -1;
                     powerUp2X += ballWidth;
                     break;
+
                 }
             }
 
@@ -796,6 +826,7 @@ namespace brickBreaker
 
             //check for green power up and platform collision
             Rectangle greenRec = new Rectangle(greenPowerUpX, greenPowerUpY, ballWidth, ballHeight);
+
             if (greenRec.IntersectsWith(platformRec))
             {
                 platformWidth = 100;
@@ -809,6 +840,7 @@ namespace brickBreaker
 
             // check when to when to drop powerups 
             counter++;
+
             if (counter == 50)
             {
                 purplePowerUpX = randGen.Next(100, 550);
@@ -824,12 +856,13 @@ namespace brickBreaker
                 greenPowerUpX = randGen.Next(100, 550);
                 greenPowerUpYSpeed = 5;
             }
+
             if (counter == 1000)
             {
                 counter = 0;
             }
-
             //check if you lose due to no lives being left
+
             if (lives == 0)
             {
                 platformWidth = 0;
@@ -840,8 +873,8 @@ namespace brickBreaker
                 gameState = "lose";
                 scoreList.Add(score);
             }
-
             //check if player won level one and should start level two and give them a bonus point
+
             if (score == 16)
             {
                 lives = 3;
@@ -874,10 +907,11 @@ namespace brickBreaker
                     brickXList.Add(brickX);
                     brickX += 100;
                 }
-                score++;
 
+                score++;
                 //check if player won the whole game
             }
+
             if (score == 32)
             {
                 platformWidth = 0;
@@ -888,11 +922,6 @@ namespace brickBreaker
                 scoreList.Add(score);
             }
             Refresh();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
