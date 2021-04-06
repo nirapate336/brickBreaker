@@ -89,5 +89,41 @@
   <ItemGroup>
     <None Include="Resources\purple.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\344300__musiclegends__hit-hurt17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brick3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\platform.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\511385__mrthenoronha__power-up-8-bit.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\400582__alanmcki__retro-arcade-video-game-descending-crazy-lose-life-tone.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\270528__littlerobotsoundfactory__jingle-win-00.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\547657__awrecording-it__totalwin1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\533034__evretro__8-bit-game-over-sound-tune.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

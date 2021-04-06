@@ -61,11 +61,20 @@ namespace brickBreaker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ballLose {
+            get {
+                return ResourceManager.GetStream("ballLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap brick1 {
+        internal static System.Drawing.Bitmap brick3 {
             get {
-                object obj = ResourceManager.GetObject("brick1", resourceCulture);
+                object obj = ResourceManager.GetObject("brick3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,10 +82,47 @@ namespace brickBreaker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap brick2 {
+        internal static System.Drawing.Bitmap green2 {
             get {
-                object obj = ResourceManager.GetObject("brick2", resourceCulture);
+                object obj = ResourceManager.GetObject("green2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream hit {
+            get {
+                return ResourceManager.GetStream("hit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream loser {
+            get {
+                return ResourceManager.GetStream("loser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap platform {
+            get {
+                object obj = ResourceManager.GetObject("platform", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream powerUp {
+            get {
+                return ResourceManager.GetStream("powerUp", resourceCulture);
             }
         }
         
@@ -86,6 +132,44 @@ namespace brickBreaker.Properties {
         internal static System.Drawing.Bitmap purple {
             get {
                 object obj = ResourceManager.GetObject("purple", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream win {
+            get {
+                return ResourceManager.GetStream("win", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream winner {
+            get {
+                return ResourceManager.GetStream("winner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yellow {
+            get {
+                object obj = ResourceManager.GetObject("yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yellow2 {
+            get {
+                object obj = ResourceManager.GetObject("yellow2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

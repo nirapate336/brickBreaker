@@ -49,7 +49,7 @@
             this.titleLabel.AutoSize = true;
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel.Font = new System.Drawing.Font("classic 10_65", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.ForeColor = System.Drawing.Color.Beige;
+            this.titleLabel.ForeColor = System.Drawing.Color.SandyBrown;
             this.titleLabel.Location = new System.Drawing.Point(148, 63);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(0, 51);
@@ -60,7 +60,7 @@
             this.subTitleLabel.AutoSize = true;
             this.subTitleLabel.BackColor = System.Drawing.Color.Transparent;
             this.subTitleLabel.Font = new System.Drawing.Font("classic 10_65", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subTitleLabel.ForeColor = System.Drawing.Color.Yellow;
+            this.subTitleLabel.ForeColor = System.Drawing.Color.MidnightBlue;
             this.subTitleLabel.Location = new System.Drawing.Point(71, 153);
             this.subTitleLabel.Name = "subTitleLabel";
             this.subTitleLabel.Size = new System.Drawing.Size(0, 28);
@@ -71,7 +71,7 @@
             this.scoreLabel.AutoSize = true;
             this.scoreLabel.BackColor = System.Drawing.Color.Transparent;
             this.scoreLabel.Font = new System.Drawing.Font("classic 10_65", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scoreLabel.ForeColor = System.Drawing.Color.Lime;
+            this.scoreLabel.ForeColor = System.Drawing.Color.DarkGreen;
             this.scoreLabel.Location = new System.Drawing.Point(473, 499);
             this.scoreLabel.Name = "scoreLabel";
             this.scoreLabel.Size = new System.Drawing.Size(0, 23);
@@ -82,7 +82,7 @@
             this.lifeLabel.AutoSize = true;
             this.lifeLabel.BackColor = System.Drawing.Color.Transparent;
             this.lifeLabel.Font = new System.Drawing.Font("classic 10_65", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lifeLabel.ForeColor = System.Drawing.Color.Lime;
+            this.lifeLabel.ForeColor = System.Drawing.Color.DarkGreen;
             this.lifeLabel.Location = new System.Drawing.Point(40, 499);
             this.lifeLabel.Name = "lifeLabel";
             this.lifeLabel.Size = new System.Drawing.Size(0, 23);
@@ -93,7 +93,7 @@
             this.levelLabel.AutoSize = true;
             this.levelLabel.BackColor = System.Drawing.Color.Transparent;
             this.levelLabel.Font = new System.Drawing.Font("classic 10_65", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.levelLabel.ForeColor = System.Drawing.Color.Lime;
+            this.levelLabel.ForeColor = System.Drawing.Color.DarkGreen;
             this.levelLabel.Location = new System.Drawing.Point(216, 499);
             this.levelLabel.Name = "levelLabel";
             this.levelLabel.Size = new System.Drawing.Size(0, 23);
